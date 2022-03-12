@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen_Peliculas.MainPage">
+
+    <StackLayout>
+
+        <CollectionView
+            x:Name="PeliculasLista"
+            SelectedItem="{Binding MovieSelected}"
+            SelectionChanged ="PeliculasLista_SelectionChanged"
+            SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                         <RowDefinition Height="Auto"/>
+                         <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                    <Image
+                        Grid.Column="4"
+                        Grid.RowSpan="2"
+                        HeightRequest="100"
+                        WidthRequest="100"
+                        Source="{Binding fotoPelicula}"/>
+                    <Label
+                        Grid.Column="1"
+                        Grid.RowSpan="2"
+                        Text="{Binding nombrePelicula}" />
+                    <Label
+                        Grid.Column="2"
+                        Grid.RowSpan="2"
+                        Text="{Binding categoriaPelicula}" />
+                    <Label
+                        Grid.Column="3"
+                        Grid.RowSpan="2"
+                        Text="{Binding precioPelicula,StringFormat='{0} $'}" />
+                    <Label
+                        Grid.Column="4"
+                        Grid.RowSpan="2"
+                        Text="{Binding idPelicula}" />
+                </Grid>
+            </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ActivityIndicator
+            x:Name="IndicadorPeliculas"
+            IsRunning="False"/>
+
+        <Button
+            x:Name="InsertarPeliculas"
+            Text="Insertar personas"
+            Clicked="Button_Clicked"/>
+        <Button
+            x:Name="NuevaPelicula"
+            Text="Nueva pelicula"
+            Clicked="NuevaPelicula_Clicked" />
+
+    </StackLayout>
+
+</ContentPage>

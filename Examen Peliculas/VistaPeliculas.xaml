@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen_Peliculas.VistaPeliculas">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image
+                x:Name="Img_pelicula"
+                HeightRequest="100"
+                WidthRequest="100"
+                Source="{Binding fotoPelicula}"/>
+            <Entry
+                x:Name="entryImg"
+                Placeholder="URL de la imagen"
+                Text="{Binding fotoPelicula}"/>
+            <Entry
+                x:Name="entryNombre"
+                Placeholder="Nombre de la pelicula"
+                Text="{Binding nombrePelicula}" />
+            <Entry
+                x:Name="entryCategoria"
+                Placeholder="Categoria de la pelicula"
+                Text="{Binding categoriaPelicula}" />
+            <Entry
+                x:Name="entryPrecio"
+                Placeholder="Precio de la pelicula"
+                Text="{Binding precioPelicula}" />
+            <Entry
+                x:Name="entryId"
+                Placeholder="Id de la pelicula"
+                Text="{Binding idPelicula}" />
+            <Button
+                x:Name="btn_Guardar"
+                Text="Guardar"
+                Clicked="btn_Guardar_Clicked" />
+            <Button
+                x:Name="btn_cancelar"
+                Text="Cancelar"
+                Clicked="btn_cancelar_Clicked" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
